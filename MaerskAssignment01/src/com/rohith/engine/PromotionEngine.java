@@ -20,11 +20,11 @@ public class PromotionEngine {
 			 int quantity = entry.getValue();
 			 
 			 if(skuid.equals("A")) {				
-				 totalamount = (quantity/3) * 130 + (quantity%3) * 50;		 		 
+				 totalamount += (quantity/3) * 130 + (quantity%3) * 50;		 		 
 			 }
 			 
 			 if(skuid.equals("B")) {				
-				 totalamount = (quantity/2) * 45 + (quantity%2) * 30;
+				 totalamount += (quantity/2) * 45 + (quantity%2) * 30;
 			 }
 			 
 			 //since skuid C and D has to be calculated together, just collect the quantity of these two SKUIDs
@@ -47,7 +47,6 @@ public class PromotionEngine {
 			 totalamount += skuidCcount* 30 + ((skuidDcount-skuidCcount) * 15);
 		 }
 		 
-		 System.out.println("C count :"+skuidCcount + " D count :"+skuidDcount);
 		 return totalamount;
 	 }
 

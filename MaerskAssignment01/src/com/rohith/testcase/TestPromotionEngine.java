@@ -62,18 +62,26 @@ public class TestPromotionEngine {
 	 
 	  cart.put("C",5);	  
 	  cart.put("D",5);	  
-	  System.err.println(promotionEngine.promotionCalculation(cart));
 	  Assert.assertEquals(150.00,promotionEngine.promotionCalculation(cart)); 
 	  cart.clear();	 
 	  cart.put("C",5);	  
 	  cart.put("D",10);	
-	  System.err.println(promotionEngine.promotionCalculation(cart));
 	  Assert.assertEquals(225,promotionEngine.promotionCalculation(cart)); 
 	  
 	  cart.clear();
 	  cart.put("C",10);	  
 	  cart.put("D",5);	
-	  System.err.println(promotionEngine.promotionCalculation(cart));
 	  Assert.assertEquals(250,promotionEngine.promotionCalculation(cart));
+  }
+  
+  //Till above tests are used to develop the code logic by test driver approach
+  //below are the test to conduct and to ensure the given scenario will work
+  @Test
+  public void scenarioA() {
+	  HashMap<String,Integer> cart = new HashMap<String,Integer>();	 
+	  cart.put("A",1);	 
+	  cart.put("B",1);
+	  cart.put("C",1);
+	  Assert.assertEquals(100.00,promotionEngine.promotionCalculation(cart)); 
   }
 }

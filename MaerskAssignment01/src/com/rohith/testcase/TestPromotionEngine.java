@@ -84,4 +84,12 @@ public class TestPromotionEngine {
 	  cart.put("C",1);
 	  Assert.assertEquals(100.00,promotionEngine.promotionCalculation(cart)); 
   }
+  @Test
+  public void scenarioB() {
+	  HashMap<String,Integer> cart = new HashMap<String,Integer>();	 
+	  cart.put("A",5);	 
+	  cart.put("B",5);
+	  cart.put("C",1);
+	  Assert.assertEquals(370.00,promotionEngine.promotionCalculation(cart)); 
+  }
 }

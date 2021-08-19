@@ -50,10 +50,30 @@ public class TestPromotionEngine {
 	  HashMap<String,Integer> cart = new HashMap<String,Integer>();
 	 
 	  cart.put("D",5);	  
-	  System.err.println(promotionEngine.promotionCalculation(cart));
 	  Assert.assertEquals(75.00,promotionEngine.promotionCalculation(cart)); 
 	  cart.clear();
 	  cart.put("D", 0);
 	  Assert.assertEquals(0,promotionEngine.promotionCalculation(cart)); 
+  }
+  
+  @Test
+  public void TestSkuidCandD() {
+	  HashMap<String,Integer> cart = new HashMap<String,Integer>();
+	 
+	  cart.put("C",5);	  
+	  cart.put("D",5);	  
+	  System.err.println(promotionEngine.promotionCalculation(cart));
+	  Assert.assertEquals(150.00,promotionEngine.promotionCalculation(cart)); 
+	  cart.clear();	 
+	  cart.put("C",5);	  
+	  cart.put("D",10);	
+	  System.err.println(promotionEngine.promotionCalculation(cart));
+	  Assert.assertEquals(225,promotionEngine.promotionCalculation(cart)); 
+	  
+	  cart.clear();
+	  cart.put("C",10);	  
+	  cart.put("D",5);	
+	  System.err.println(promotionEngine.promotionCalculation(cart));
+	  Assert.assertEquals(250,promotionEngine.promotionCalculation(cart));
   }
 }
